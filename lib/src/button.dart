@@ -14,7 +14,7 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = UntangledApp.of(context).themeData;
+    ThemeData theme = Theme.of(context).currentTheme;
     ButtonTheme buttonTheme = theme.buttonTheme;
     return GestureDetector(
       onTap: onTap,

@@ -11,15 +11,42 @@ class ThemeData {
     this.primaryColor = colorPrimary,
     this.buttonTheme = const ButtonTheme(),
     this.chipTheme = const ChipTheme(),
+    this.canvasColor = colorBlack,
+    this.textColor = colorWhite,
   });
+
+  factory ThemeData.defaultLight() {
+    return const ThemeData(
+      canvasColor: colorWhite,
+      textColor: colorBlack,
+      buttonTheme: ButtonTheme(
+        foregroundColor: colorBlack,
+        backgroundColor: colorPrimary,
+      ),
+      chipTheme: ChipTheme(
+        foregroundColor: colorBlack,
+        backgroundColor: colorWhite,
+      ),
+    );
+  }
+
+  factory ThemeData.defaultDark() {
+    return const ThemeData(
+      buttonTheme: ButtonTheme(),
+      chipTheme: ChipTheme(),
+    );
+  }
 
   final ButtonTheme buttonTheme;
   final ChipTheme chipTheme;
   final Color primaryColor;
+  final Color canvasColor;
+  final Color textColor;
 }
 
 class ButtonTheme {
   const ButtonTheme({
+    this.canvasColor = colorBlack,
     this.foregroundColor = colorWhite,
     this.backgroundColor = colorPrimary,
     this.padding = const EdgeInsets.all(20),
@@ -28,6 +55,7 @@ class ButtonTheme {
 
   final Color foregroundColor;
   final Color backgroundColor;
+  final Color canvasColor;
   final EdgeInsetsGeometry padding;
   final BorderRadius? borderRadius;
 }

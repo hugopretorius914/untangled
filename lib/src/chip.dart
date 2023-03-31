@@ -16,7 +16,7 @@ class Chip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = UntangledApp.of(context).themeData;
+    ThemeData theme = Theme.of(context).currentTheme;
     ChipTheme chipTheme = theme.chipTheme;
     return GestureDetector(
       onTap: onTap,
